@@ -1,0 +1,25 @@
+# How to install gh CLI ?
+
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+  sudo apt-add-repository https://cli.github.com/packages
+$ sudo apt update
+$ sudo apt install gh
+$ gh --version
+
+OR Using the Snap Store:
+$ sudo snap install gh
+ 
+# Now, Authenticate
+$ gh auth login
+It will ask you the token details. you can generate token setting => Developer setting => Personal access token => Token => Generate new Token.
+Proide this token then all you set.
+
+# How to list out the repo ?
+$ gh repo list
+
+# How to clone all the repo to local?
+Syntax: gh repo list <your_org_name> --limit 4000 | while read -r repo _; do gh repo clone "$repo" "$repo"; done
+Example : gh repo list yash0204 --limit 4000 | while read -r repo _; do gh repo clone "$repo" "$repo"; done
+
+# How to create repo ?
+$ gh repo create
